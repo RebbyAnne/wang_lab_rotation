@@ -2,6 +2,6 @@
 /literature/
 /20240325_ExfoSeq_SPARC_IBD_Healthy/
 /snakemake_pipeline/.snakemake/
-/workflow/out/
+/snakemake_pipeline//workflow/out/
 .RData
 .RHistory
