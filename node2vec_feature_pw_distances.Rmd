@@ -1,0 +1,46 @@
+---
+title: "node2vec_feature_pw_distances"
+output: html_document
+date: "2025-02-03"
+---
+
+```{r}
+library(readr)
+library(tidyverse)
+library(ggplot2)
+
+dist_matrix <- read_csv("snakemake_pipeline/workflow/out/node_distances/noIsolates_4Lw100Nw0.1p10q128k_featureDistances.csv")
+```
+
+```{r}
+gene_features <- colnames(dist_matrix[,0:647])
+microbe_features <- colnames(dist_matrix[,648:ncol(dist_matrix)])
+
+closest_nodes_intra_feature_type <- dist_matrix %>%
+  rename(feature1 = 1) %>%
+  pivot_longer(cols = !feature1, 
+               names_to = "feature2", 
+               values_to = "distance") %>%
+  mutate(pair = pmin(feature1, feature2), pair2 = pmax(feature1, feature2)) %>%
+  distinct(pair, pair2, .keep_all = TRUE) %>%
+  select(-pair, -pair2) %>%
+  mutate(node_type = if_else(feature1 %in% gene_features & feature2 %in% gene_features, 
+                             "gene_features", 
+                             if_else(feature1 %in% microbe_features & feature2 %in% microbe_features, 
+                                     "microbe_features",
+                                     "microbe_gene")))
+  
+  
+
+
+```
+
+```{r}
+ggplot(subset(closest_nodes_intra_feature_type, distance > 0), aes(x = distance, color = node_type)) +
+  geom_density()
+
+View(subset(closest_nodes_intra_feature_type, distance < 5 & distance > 0))
+
+```
+
+

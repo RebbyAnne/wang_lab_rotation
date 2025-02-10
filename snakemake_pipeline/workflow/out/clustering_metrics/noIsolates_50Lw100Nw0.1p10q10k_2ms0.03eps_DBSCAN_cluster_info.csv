@@ -1,0 +1,52 @@
+Cluster ID,Number of Nodes,Gene Nodes,Microbe Nodes,Gene Node List,Microbe Node List,Silhouette Score,Cluster Diameter,min_samples,epsilon,dimensions,walk_length,n_walks,p,q
+0,3,3,0,"['tumor necrosis factor receptor superfamily member 1A', 'C-C motif chemokine 20', 'anti-mullerian hormone receptor type-2 [EC:2.7.11.30]']",[],0.867338,0.038823713,2,0.03,10,50,100,0.1,10
+1,2,2,0,"['nitric-oxide synthase, inducible [EC:1.14.13.39]', 'Chemokine signaling pathway']",[],0.893911,0.029228978,2,0.03,10,50,100,0.1,10
+2,2,1,1,['cyclin-dependent kinase inhibitor 2A'],['Campylobacteria'],0.840492,0.01631817,2,0.03,10,50,100,0.1,10
+3,2,2,0,"['toll-like receptor 2', 'tumor necrosis factor ligand superfamily member 7']",[],0.7829219,0.007874736,2,0.03,10,50,100,0.1,10
+4,2,1,1,['interferon receptor 2'],['Miniphocaeibacter'],0.7807392,0.022447335,2,0.03,10,50,100,0.1,10
+5,2,2,0,"['tumor necrosis factor receptor superfamily member 5', 'lymphotoxin alpha (TNF superfamily, member 1)']",[],0.98021996,0.02192218,2,0.03,10,50,100,0.1,10
+6,2,1,1,['Metabolic pathways'],['Roseburia'],0.966308,0.010705119,2,0.03,10,50,100,0.1,10
+7,2,2,0,"['Hematopoietic cell lineage', 'Gastric cancer']",[],0.9020289,0.01484978,2,0.03,10,50,100,0.1,10
+8,2,1,1,['IL-17 signaling pathway'],['Moryella'],0.8521142,0.02445482,2,0.03,10,50,100,0.1,10
+9,2,2,0,"['interleukin 2 receptor alpha', 'Retrograde endocannabinoid signaling']",[],0.8929409,0.02504705,2,0.03,10,50,100,0.1,10
+10,2,2,0,"['Rheumatoid arthritis', 'Influenza A']",[],0.65581495,0.029919157,2,0.03,10,50,100,0.1,10
+11,2,2,0,"['Th17 cell differentiation', 'Non-small cell lung cancer']",[],0.90107167,0.015729941,2,0.03,10,50,100,0.1,10
+12,2,2,0,"['Toll-like receptor signaling pathway', 'EGFR tyrosine kinase inhibitor resistance']",[],0.8435598,0.029706813,2,0.03,10,50,100,0.1,10
+13,2,1,1,['C-C motif chemokine 4'],['Drancourtella'],0.9457529,0.022053944,2,0.03,10,50,100,0.1,10
+14,2,2,0,"['claudin', 'Lysosome']",[],0.9787835,0.016341936,2,0.03,10,50,100,0.1,10
+15,4,3,1,"['MAPK signaling pathway', 'Chronic myeloid leukemia', 'Parkinson disease']",['Eubacteriales'],0.8544436,0.045827612,2,0.03,10,50,100,0.1,10
+16,2,2,0,"['Kaposi sarcoma-associated herpesvirus infection', 'Hepatitis B']",[],0.6506898,0.017366733,2,0.03,10,50,100,0.1,10
+17,3,3,0,"['Transcriptional misregulation in cancer', 'Hepatitis C', 'FoxO signaling pathway']",[],0.47287944,0.033420153,2,0.03,10,50,100,0.1,10
+18,3,3,0,"['Coronavirus disease - COVID-19', 'Fc epsilon RI signaling pathway', 'ECM-receptor interaction']",[],0.66685003,0.04011888,2,0.03,10,50,100,0.1,10
+19,3,3,0,"['granulocyte-macrophage colony-stimulating factor receptor alpha', 'Apoptosis - multiple species', 'cGMP-PKG signaling pathway']",[],0.9227336,0.02332307,2,0.03,10,50,100,0.1,10
+20,3,3,0,"['Epstein-Barr virus infection', 'Th1 and Th2 cell differentiation', 'Renal cell carcinoma']",[],0.8882496,0.03233104,2,0.03,10,50,100,0.1,10
+21,2,1,1,['Neutrophil extracellular trap formation'],['Syntrophomonadaceae'],0.92474484,0.012444539,2,0.03,10,50,100,0.1,10
+22,4,4,0,"['Leishmaniasis', 'Measles', 'Epithelial cell signaling in Helicobacter pylori infection', 'Small cell lung cancer']",[],0.52230036,0.03784909,2,0.03,10,50,100,0.1,10
+23,2,2,0,"['Amoebiasis', 'Thyroid hormone signaling pathway']",[],0.73597157,0.014358433,2,0.03,10,50,100,0.1,10
+24,2,2,0,"['Leukocyte transendothelial migration', 'Allograft rejection']",[],0.97110116,0.0057636364,2,0.03,10,50,100,0.1,10
+25,2,1,1,['interleukin 24'],['Enterobacterales'],0.9973171,0.00700594,2,0.03,10,50,100,0.1,10
+26,2,2,0,"['PD-L1 expression and PD-1 checkpoint pathway in cancer', 'Growth hormone synthesis, secretion and action']",[],0.8503841,0.024063261,2,0.03,10,50,100,0.1,10
+27,2,1,1,['cytokine receptor common subunit beta'],['Harryflintia'],0.9895001,0.018236954,2,0.03,10,50,100,0.1,10
+28,2,2,0,"['AGE-RAGE signaling pathway in diabetic complications', 'Relaxin signaling pathway']",[],0.9523309,0.00273232,2,0.03,10,50,100,0.1,10
+29,2,2,0,"['forkhead box P3', 'Ferroptosis']",[],0.9469929,0.016840367,2,0.03,10,50,100,0.1,10
+30,2,2,0,"['integrin alpha X', 'p53 signaling pathway']",[],0.961568,0.016369458,2,0.03,10,50,100,0.1,10
+31,2,2,0,"['Asthma', 'Gap junction']",[],0.9392267,0.0142559875,2,0.03,10,50,100,0.1,10
+32,2,2,0,"['Phospholipase D signaling pathway', 'Melanoma']",[],0.7268541,0.029083313,2,0.03,10,50,100,0.1,10
+33,2,1,1,['tumor necrosis factor receptor superfamily member 12A'],['Bacillaceae'],0.96212494,0.029127987,2,0.03,10,50,100,0.1,10
+34,2,2,0,"['lipocalin 2', 'Ubiquitin mediated proteolysis']",[],0.96949184,0.016520314,2,0.03,10,50,100,0.1,10
+35,2,1,1,['Basal cell carcinoma'],['Anaerosolibacter'],0.9641129,0.026604237,2,0.03,10,50,100,0.1,10
+36,2,2,0,"['Glioma', 'Apelin signaling pathway']",[],0.7174976,0.029982045,2,0.03,10,50,100,0.1,10
+37,2,1,1,['Virion - Rotavirus'],['Oribacterium'],0.96571445,0.02756203,2,0.03,10,50,100,0.1,10
+38,2,1,1,['Vibrio cholerae infection'],['Acholeplasmatales'],0.98983514,0.007829941,2,0.03,10,50,100,0.1,10
+39,2,0,2,[],"['Bacteroidales', 'Vallitaleaceae']",0.94603276,0.026981462,2,0.03,10,50,100,0.1,10
+40,2,0,2,[],"['Christensenellaceae', 'Thermoplasmata']",0.8847254,0.020389028,2,0.03,10,50,100,0.1,10
+41,2,0,2,[],"['Actinomycetaceae', 'Actinotignum']",0.9741763,0.016788125,2,0.03,10,50,100,0.1,10
+42,2,0,2,[],"['Flavobacteriales', 'Flavobacteriia']",0.9867547,0.026736483,2,0.03,10,50,100,0.1,10
+43,2,0,2,[],"['Barnesiellaceae', 'Zhaonellaceae']",0.98757,0.014850995,2,0.03,10,50,100,0.1,10
+44,2,0,2,[],"['Chitinophagaceae', 'Chitinophagia']",0.9861554,0.027945464,2,0.03,10,50,100,0.1,10
+45,2,0,2,[],"['Eubacteriales_incertae_sedis_XII', 'Guggenheimella']",0.977041,0.017656319,2,0.03,10,50,100,0.1,10
+46,2,0,2,[],"['Butyricimonas', 'Gemella']",0.4827177,0.018624686,2,0.03,10,50,100,0.1,10
+47,2,0,2,[],"['Campylobacter', 'Lancefieldella']",0.96277165,0.0064450633,2,0.03,10,50,100,0.1,10
+48,2,0,2,[],"['Robinsoniella', 'Frisingicoccus']",0.87755036,0.019645572,2,0.03,10,50,100,0.1,10
+49,2,0,2,[],"['Natranaerobiales', 'Dethiobacter']",0.9464866,0.028447658,2,0.03,10,50,100,0.1,10
+50,2,0,2,[],"['Koleobacteraceae', 'Lachnobacterium']",0.9787463,0.019003054,2,0.03,10,50,100,0.1,10

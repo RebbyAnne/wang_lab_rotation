@@ -1,0 +1,83 @@
+from os.path import join
+
+configfile: "config/config.yml"
+
+WALK_LENGTHS = config["walk_lengths"]
+N_WALKS = config["n_walks"]
+P_VALUES = config["p"]
+Q_VALUES = config["q"]
+DIMENSIONS = config["dimensions"]
+MIN_SAMPLE = config["min_sample"]
+EPSILON = config["epsilon"]
+
+rule all:
+    input:
+        # node2vec embeddings
+        expand(join(config["embeddingsDir"], "noIsolates_{walk_length}Lw{n_walks}Nw{p}p{q}q{k}k.embeddings"),
+            walk_length=WALK_LENGTHS,
+            n_walks=N_WALKS,
+            p=P_VALUES,
+            q=Q_VALUES, 
+            k=DIMENSIONS), 
+        
+        # pca viz of all nodes colored by node type
+        # expand(join(config["plotsDir"], "noIsolates_{walk_length}Lw{n_walks}Nw{p}p{q}q{k}k_PCA.png"),
+        #     walk_length=WALK_LENGTHS,
+        #     n_walks=N_WALKS,
+        #     p=P_VALUES,
+        #     q=Q_VALUES,
+        #     k=DIMENSIONS), 
+
+        # pca viz of all nodes colored by node type
+        # expand(join(config["plotsDir"], "noIsolates_{walk_length}Lw{n_walks}Nw{p}p{q}q{k}k_PCA_featureNodes.png"),
+        #     walk_length=WALK_LENGTHS,
+        #     n_walks=N_WALKS,
+        #     p=P_VALUES,
+        #     q=Q_VALUES,
+        #     k=DIMENSIONS), 
+
+        # # pairwise distance between feature nodes
+        # expand("workflow/out/node_distances/noIsolates_{walk_length}Lw{n_walks}Nw{p}p{q}q{k}k_featureDistances.csv",
+        #     walk_length=WALK_LENGTHS,
+        #     n_walks=N_WALKS,
+        #     p=P_VALUES,
+        #     q=Q_VALUES,
+        #     k=DIMENSIONS)
+
+        # DBSCAN cluster viz
+        # expand(join(config["clusterPlots"], "noIsolates_{walk_length}Lw{n_walks}Nw{p}p{q}q{k}k_{min_sample}ms{epsilon}eps_PCA_DBSCAN.png"),
+        #     walk_length=WALK_LENGTHS,
+        #     n_walks=N_WALKS,
+        #     p=P_VALUES,
+        #     q=Q_VALUES,
+        #     k=DIMENSIONS, 
+        #     min_sample=MIN_SAMPLE, 
+        #     epsilon=EPSILON)
+
+        # DBSCAN cluster metrics
+        expand(join(config["clusteringMetrics"], "noIsolates_{walk_length}Lw{n_walks}Nw{p}p{q}q{k}k_{min_sample}ms{epsilon}eps_DBSCAN_cluster_info.csv"),
+            walk_length=WALK_LENGTHS,
+            n_walks=N_WALKS,
+            p=P_VALUES,
+            q=Q_VALUES,
+            k=DIMENSIONS, 
+            min_sample=MIN_SAMPLE, 
+            epsilon=EPSILON), 
+
+        # PW distance
+        expand(join(config["distMatrix"], "noIsolates_{walk_length}Lw{n_walks}Nw{p}p{q}q{k}k_featureDistanceMatrix.csv"),
+            walk_length=WALK_LENGTHS,
+            n_walks=N_WALKS,
+            p=P_VALUES,
+            q=Q_VALUES,
+            k=DIMENSIONS), 
+        
+        expand(join(config["distDF"], "noIsolates_{walk_length}Lw{n_walks}Nw{p}p{q}q{k}k_featureDistanceData_long.csv"),
+            walk_length=WALK_LENGTHS,
+            n_walks=N_WALKS,
+            p=P_VALUES,
+            q=Q_VALUES,
+            k=DIMENSIONS)
+
+include:
+    "workflow/rules/node2vec.smk"

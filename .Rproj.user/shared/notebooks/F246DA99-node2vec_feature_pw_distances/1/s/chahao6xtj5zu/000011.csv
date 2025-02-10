@@ -1,0 +1,6 @@
+"0","closest_nodes_intra_feature_type <- dist_matrix %>%
+  rename(feature = 1)
+"
+"2","Error in dist_matrix %>% rename(feature = 1) : 
+  could not find function ""%>%""
+"

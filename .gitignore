@@ -1,0 +1,7 @@
+.DS_Store
+/literature/
+/20240325_ExfoSeq_SPARC_IBD_Healthy/
+/snakemake_pipeline/.snakemake/
+/workflow/out/
+.RData
+.RHistory

@@ -1,0 +1,417 @@
+---
+title: "get_kegg_pathways"
+output: html_document
+date: "2025-01-27"
+---
+
+```{r}
+library(readr)
+library(KEGGREST)
+library(tidyverse)
+
+directory = "./20240325_ExfoSeq_SPARC_IBD_Healthy"
+setwd("/Users/rebeccachristensen/Desktop/wang_rotation")
+
+gene_metadata <- read.table(paste(directory, "/gene.metadata.tsv", sep = ""), header = T, sep = "\t", stringsAsFactors = F)
+
+otu_taxonomy <- read_delim("20240325_ExfoSeq_SPARC_IBD_Healthy/archive/archive_20231126_16SV4_SPARC_IBD_DIVERS_H1_H7_H72/rdp.taxonomy.tsv", 
+    delim = "\t", escape_double = FALSE, 
+    trim_ws = TRUE)
+
+gene_pathway_metadata <- read_csv("20240325_ExfoSeq_SPARC_IBD_Healthy/kegg_pathway_metadata.csv")
+```
+
+```{r}
+genes <- unique(gene_metadata$geneSymbol)
+
+pathway_df <- data.frame(GeneSymbol = character(),
+                       PathwayID = character(),
+                       PathwayName = character(),
+                       stringsAsFactors = FALSE)
+
+get_kegg_pathways <- function(gene) {
+  tryCatch({
+    # Prepend 'hsa:' for human genes (adjust this prefix for other organisms as needed)
+    gene_with_prefix <- paste("hsa:", gene, sep="")
+    
+    # Fetch KEGG data for the gene
+    gene_info <- keggGet(gene_with_prefix)
+    
+    # Check if the gene has any pathways
+    if (is.null(gene_info[[1]]$PATHWAY) || length(gene_info[[1]]$PATHWAY) == 0) {
+      return(NULL)  # Return NULL if no pathways exist
+    }
+    
+    if (is.null(gene_info[[1]]$ORTHOLOGY) || length(gene_info[[1]]$ORTHOLOGY) == 0) {
+      return(NULL)  # Return NULL if no pathways exist
+    }
+    
+    # Extract pathway information
+    orthology <- gene_info[[1]]$ORTHOLOGY
+    ortho_ids <- names(orthology)
+    ortho_names <- as.vector(orthology)
+    
+    pathways <- gene_info[[1]]$PATHWAY
+    pathway_ids <- names(pathways)  # The names are the pathway IDs
+    pathway_names <- as.vector(pathways)       # The values are the pathway names
+    
+    # Return data as a data frame directly
+    data.frame(
+      gene_symbol = gene,
+      kegg_pathway_id = pathway_ids,
+      kegg_pathway_name = pathway_names,
+      kegg_orthology_id = ortho_ids,
+      kegg_orthology_name = ortho_names
+    )
+    
+  }, error = function(e) {
+    return(NULL)  # Return NULL if there is an error
+  })
+}
+
+
+for (gene in genes) {
+  gene_data <- get_kegg_pathways(gene)
+  
+  if (!is.null(gene_data)) {
+    pathway_df <- rbind(pathway_df, gene_data)  # Append the gene's pathway data to final_df
+  } else {
+    pathway_df <- rbind(pathway_df, data.frame(gene_symbol = gene, 
+                                               kegg_pathway_id = NA, 
+                                               kegg_pathway_name = NA, 
+                                               kegg_orthology_id = NA, 
+                                               kegg_orthology_name = NA))
+  }
+}
+
+write.csv(pathway_df, paste(directory, "/kegg_pathway_metadata.csv", sep=""))
+
+```
+
+# retrieving kegg pathway info for genes that failed
+```{r}
+na_genes <- unique(subset(gene_pathway_metadata, is.na(kegg_pathway_id))$gene_symbol)
+
+pathway_df <- data.frame(GeneSymbol = character(),
+                       PathwayID = character(),
+                       PathwayName = character(),
+                       stringsAsFactors = FALSE)
+
+for (gene in na_genes) {
+  gene_data <- get_kegg_pathways(gene)
+  
+  if (!is.null(gene_data)) {
+    pathway_df <- rbind(pathway_df, gene_data)  # Append the gene's pathway data to final_df
+  } else {
+    pathway_df <- rbind(pathway_df, data.frame(gene_symbol = gene, 
+                                               kegg_pathway_id = NA, 
+                                               kegg_pathway_name = NA, 
+                                               kegg_orthology_id = NA, 
+                                               kegg_orthology_name = NA))
+  }
+}
+
+# first
+gene_pathway_metadata_notNA <- subset(gene_pathway_metadata, !is.na(kegg_pathway_id))
+gene_pathway_metadata_notNA <- gene_pathway_metadata_notNA[, -c(1)]
+pathway_df_notNA <- subset(pathway_df, !is.na(kegg_pathway_id))
+merged <- rbind(gene_pathway_metadata_notNA, pathway_df_notNA)
+
+na_genes <- setdiff(gene_pathway_metadata$gene_symbol, merged$gene_symbol)
+
+# after the first
+pathway_df_notNA <- subset(pathway_df, !is.na(kegg_pathway_id))
+merged <- rbind(merged, pathway_df_notNA)
+
+na_genes <- setdiff(gene_pathway_metadata$gene_symbol, merged$gene_symbol)
+
+write.csv(merged, paste(directory, "/kegg_pathway_metadata.csv", sep=""))
+
+```
+
+
+# kegg pathways for OTUs
+```{r}
+get_otu_kegg_pathways <- function(query_genus) {
+  pathway_info_for_genus <- list()
+  
+  # get all Genomes under the genus keyword search
+  species <- tryCatch({keggFind("genome", query_genus)}, 
+                      error=function(e){NULL})
+  species <- species[!grepl("phage", species)] # filter out phage genomes
+  
+  genome_ids <- names(species)
+  genome_ids <- sub("gn:", "", genome_ids)  # Strip "gn:" prefix
+  
+  # map species names to genome_ids for populating df later
+  species_names <- as.vector(species)
+  genome_to_species <- setNames(species_names, genome_ids)
+  
+  for (genome_id in genome_ids) {
+    pathway_ids <- names(tryCatch({keggList("pathway", genome_id)}, 
+                                  error=function(e){NULL}))
+    
+    for (pathway_id in pathway_ids) {
+      genome_pathway_entry <- tryCatch({keggGet(pathway_id)[[1]]}, 
+                                       error=function(e){NULL})
+      
+      kegg_pathway_id <- ifelse(is.null(genome_pathway_entry$KO_PATHWAY), NA, genome_pathway_entry$KO_PATHWAY)
+      
+      kegg_pathway_entry <- tryCatch({keggGet(kegg_pathway_id)[[1]]}, 
+                                     error=function(e){NULL})
+      kegg_pathway_name <- ifelse(is.null(kegg_pathway_entry$NAME), NA, kegg_pathway_entry$NAME)
+      
+      species_name <- as.vector(genome_to_species[genome_id])
+      
+      pathway_info <- c(query_genus, genome_id, species_name, kegg_pathway_id, kegg_pathway_name)
+      pathway_info_for_genus <- append(pathway_info_for_genus, list(pathway_info))
+    }
+  }
+  return(pathway_info_for_genus)
+}
+
+genera <- unique(otu_taxonomy$genus)
+all_pathway_info_data <- c()
+
+for (genus in genera){
+  genus_info <- get_otu_kegg_pathways(genus)
+
+  all_pathway_info_data <- c(all_pathway_info_data, genus_info)
+}
+
+otu_kegg_pathways <- as.data.frame(do.call(rbind, all_pathway_info_data))
+otu_kegg_pathways <- otu_kegg_pathways %>%
+  distinct()
+
+column_names <- c("genus", "genome_id", "species_name", "kegg_pathway_id", "kegg_pathway_name")
+colnames(otu_kegg_pathways) <- column_names
+
+write_csv(otu_kegg_pathways, paste(directory, "/otu_kegg_pathway_metadata.csv", sep=""))
+
+```
+
+# debugging
+```{r}
+
+get_otu_kegg_pathways <- function(query_genus) {  
+  pathway_info_for_genus <- list()  
+
+  # Get all genomes under the genus keyword search
+  
+  tryCatch({
+    keggFind("genome", query_genus)
+  }, error = function(e) {
+    stop(sprintf("Error fetching genome for genus '%s': %s", query_genus, e$message))
+  })
+
+  if (is.null(species) || length(species) == 0) {
+    # Add an entry with NA values
+    pathway_info_for_genus <- append(pathway_info_for_genus, list(c(query_genus, NA, NA, NA, NA)))
+    return(pathway_info_for_genus)
+  }
+
+  # Filter out phage genomes
+  species <- species[!grepl("phage", species)]  
+
+  genome_ids <- names(species)
+  genome_ids <- sub("gn:", "", genome_ids)  # Strip "gn:" prefix
+
+  # Map species names to genome_ids for populating the dataframe later
+  species_names <- as.vector(species)
+  genome_to_species <- setNames(species_names, genome_ids)
+
+  for (genome_id in genome_ids) {
+    pathway_ids <- tryCatch({
+      names(keggList("pathway", genome_id))
+    }, error = function(e) {
+      NULL
+    })
+
+    if (is.null(pathway_ids) || length(pathway_ids) == 0) {
+      # If no pathways found for this genome, add a row with NA values
+      species_name <- as.vector(genome_to_species[genome_id])
+      pathway_info <- c(query_genus, genome_id, species_name, NA, NA)
+      pathway_info_for_genus <- append(pathway_info_for_genus, list(pathway_info))
+      next
+    }
+
+    for (pathway_id in pathway_ids) {
+      # Get pathway details
+      genome_pathway_entry <- tryCatch({
+        keggGet(pathway_id)[[1]]
+      }, error = function(e) {
+        NULL
+      })
+
+      kegg_pathway_id <- ifelse(is.null(genome_pathway_entry$KO_PATHWAY), NA, genome_pathway_entry$KO_PATHWAY)
+
+      # Fetch higher-level KEGG pathway information
+      kegg_pathway_entry <- tryCatch({
+        keggGet(kegg_pathway_id)[[1]]
+      }, error = function(e) {
+        NULL
+      })
+
+      kegg_pathway_name <- ifelse(is.null(kegg_pathway_entry$NAME), NA, kegg_pathway_entry$NAME)
+      species_name <- as.vector(genome_to_species[genome_id])
+
+      # Collect pathway information
+      pathway_info <- c(query_genus, genome_id, species_name, kegg_pathway_id, kegg_pathway_name)
+      pathway_info_for_genus <- append(pathway_info_for_genus, list(pathway_info))
+    }
+  }
+  return(pathway_info_for_genus)
+}
+
+all_pathway_info_data <- c()
+
+genera <- unique(otu_taxonomy$genus)
+
+for (genus in genera){
+  print(genus)
+  genus_info <- get_otu_kegg_pathways(genus)
+
+  all_pathway_info_data <- c(all_pathway_info_data, genus_info)
+}
+
+otu_kegg_pathways <- as.data.frame(do.call(rbind, all_pathway_info_data))
+otu_kegg_pathways <- otu_kegg_pathways %>%
+  distinct()
+
+column_names <- c("genus", "genome_id", "species_name", "kegg_pathway_id", "kegg_pathway_name")
+colnames(otu_kegg_pathways) <- column_names
+
+write_csv(otu_kegg_pathways, paste(directory, "/otu_kegg_pathway_metadata.csv", sep=""))
+
+```
+
+# handle KEGG processing errors
+```{r}
+get_otu_kegg_pathways <- function(query_genus) {
+  pathway_info_for_genus <- list()
+
+  # Get all genomes under the genus keyword search
+  species <- tryCatch({
+    keggFind("genome", query_genus)
+  }, error = function(e) {
+    stop(sprintf("Error fetching genomes for genus '%s': %s", query_genus, e$message))
+  })
+
+  if (is.null(species) || length(species) == 0) {
+    # Add an entry with NA values if no genomes are found
+    pathway_info_for_genus <- append(pathway_info_for_genus, list(c(query_genus, NA, NA, NA, NA)))
+    return(pathway_info_for_genus)
+  }
+
+  # Filter out phage genomes
+  species <- species[!grepl("phage", species)]
+
+  genome_ids <- names(species)
+  genome_ids <- sub("gn:", "", genome_ids)  # Strip "gn:" prefix
+
+  # Map species names to genome_ids for populating the dataframe later
+  species_names <- as.vector(species)
+  genome_to_species <- setNames(species_names, genome_ids)
+
+  for (genome_id in genome_ids) {
+    pathway_ids <- tryCatch({
+      names(keggList("pathway", genome_id))
+    }, error = function(e) {
+      message(sprintf("Error fetching pathways for genome '%s': %s", genome_id, e$message))
+      return(pathway_info_for_genus)  # Exit function on error
+    })
+
+    if (is.null(pathway_ids) || length(pathway_ids) == 0) {
+      # If no pathways found, exit function immediately
+      message(sprintf("No pathways found for genome '%s', stopping.", genome_id))
+      return(pathway_info_for_genus)
+    }
+
+    for (pathway_id in pathway_ids) {
+      # Get pathway details
+      genome_pathway_entry <- tryCatch({
+        keggGet(pathway_id)[[1]]
+      }, error = function(e) {
+        message(sprintf("Error fetching details for pathway '%s': %s", pathway_id, e$message))
+        return(pathway_info_for_genus)  # Exit function on error
+      })
+
+      kegg_pathway_id <- ifelse(is.null(genome_pathway_entry$KO_PATHWAY), NA, genome_pathway_entry$KO_PATHWAY)
+
+      if (is.na(kegg_pathway_id)) {
+        # If no KO_PATHWAY is found, exit function immediately
+        message(sprintf("KO_PATHWAY not found for pathway '%s', stopping.", pathway_id))
+        return(pathway_info_for_genus)
+      }
+
+      # Fetch higher-level KEGG pathway information
+      kegg_pathway_entry <- tryCatch({
+        keggGet(kegg_pathway_id)[[1]]
+      }, error = function(e) {
+        message(sprintf("Error fetching higher-level details for pathway '%s': %s", kegg_pathway_id, e$message))
+        return(pathway_info_for_genus)  # Exit function on error
+      })
+
+      kegg_pathway_name <- ifelse(is.null(kegg_pathway_entry$NAME), NA, kegg_pathway_entry$NAME)
+
+      if (is.na(kegg_pathway_name)) {
+        # If no pathway name is found, exit function immediately
+        message(sprintf("Pathway name not found for pathway '%s', stopping.", pathway_id))
+        return(pathway_info_for_genus)
+      }
+
+      species_name <- as.vector(genome_to_species[genome_id])
+
+      # Collect pathway information
+      pathway_info <- c(query_genus, genome_id, species_name, kegg_pathway_id, kegg_pathway_name)
+      pathway_info_for_genus <- append(pathway_info_for_genus, list(pathway_info))
+    }
+  }
+
+  return(pathway_info_for_genus)
+}
+
+all_pathway_info_data <- list()
+
+genera <- unique(otu_taxonomy$genus)
+
+processed_genera <- c()
+
+# Loop through each genus and process data
+for (genus in genera) {
+  print(sprintf("Processing genus: %s", genus))
+  
+  # Error handling for the entire genus processing
+  tryCatch({
+    genus_info <- get_otu_kegg_pathways(genus)
+
+    all_pathway_info_data <- c(all_pathway_info_data, genus_info)
+    
+    # Save intermediate results after each genus
+    otu_kegg_pathways <- as.data.frame(do.call(rbind, all_pathway_info_data))
+    colnames(otu_kegg_pathways) <- c("genus", "genome_id", "species_name", "kegg_pathway_id", "kegg_pathway_name")
+    
+    file <- paste0("/Users/rebeccachristensen/Desktop/wang_rotation/kegg_pathway_metadata/", paste0(genus, "_kegg_pathway_metadata.csv"))
+    write_csv(otu_kegg_pathways, file)
+    
+    processed_genera <- append(processed_genera, genus)
+    
+  }, error = function(e) {
+    # # Save the data collected so far
+    # if (length(all_pathway_info_data) > 0) {
+    #   otu_kegg_pathways <- as.data.frame(do.call(rbind, all_pathway_info_data))
+    #   colnames(otu_kegg_pathways) <- c("genus", "genome_id", "species_name", "kegg_pathway_id", "kegg_pathway_name")
+    #   write_csv(otu_kegg_pathways, paste0(directory, "/otu_kegg_pathway_metadata.csv"))
+    # }
+    stop(sprintf("Error processing genus '%s': %s", genus, e$message))
+  })
+}
+
+# # Final save of all collected data
+# otu_kegg_pathways <- as.data.frame(do.call(rbind, all_pathway_info_data))
+# colnames(otu_kegg_pathways) <- c("genus", "genome_id", "species_name", "kegg_pathway_id", "kegg_pathway_name")
+# write_csv(otu_kegg_pathways, paste0(directory, "/otu_kegg_pathway_metadata_final.csv"))
+
+
+```
+

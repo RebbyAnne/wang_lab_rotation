@@ -1,0 +1,15 @@
+"0","# Join gene metadata and read stats with raw counts
+host_cpm_data <- gene_counts %>%
+  left_join(gene_metadata, by = ""gene"") %>%
+  left_join(read_stats, by = ""sample"") %>%
+  left_join(hk_gene_counts, by = ""sample"") %>%
+  group_by(sample) %>%
+  mutate(rna_cpm = (num_of_umi / unique_UMI) * 1e6, 
+         cpm_hk_norm = (num_of_umi / sum_umi_hkgenes) * 1e6) %>%
+  ungroup() %>%
+  left_join(sample_metadata_host[,c(""label"", ""patient"", ""disease_type"")], by = c(""sample"" = ""label"")) %>%
+  group_by(geneSymbol, patient) %>%
+  summarize(mean_rna_cpm = mean(rna_cpm, na.rm = T),
+            mean_hk_norm_cpm = mean(cpm_hk_norm, na.rm = T)) 
+"
+"2","`summarise()` has grouped output by 'geneSymbol'. You can override using the `.groups` argument."

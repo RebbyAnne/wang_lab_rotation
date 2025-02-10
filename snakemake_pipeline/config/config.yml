@@ -1,0 +1,58 @@
+# config.yaml
+
+directory: "../20240325_ExfoSeq_SPARC_IBD_Healthy"
+
+# metadata
+sample_metadata_host: "../20240325_ExfoSeq_SPARC_IBD_Healthy/sample.metadata.tsv"
+gene_metadata: "../20240325_ExfoSeq_SPARC_IBD_Healthy/gene.metadata.tsv"
+housekeeping_genes:  "../20240325_ExfoSeq_SPARC_IBD_Healthy/geneSymbol.house_keep.list"
+kegg_metadata: "../20240325_ExfoSeq_SPARC_IBD_Healthy/kegg_pathway_metadata.csv"
+sample_metadata_microbe: "../20240325_ExfoSeq_SPARC_IBD_Healthy/archive/archive_20231126_16SV4_SPARC_IBD_DIVERS_H1_H7_H72/sample.metadata.tsv"
+
+# gene/microbe counts
+gene_count_1_2: "../20240325_ExfoSeq_SPARC_IBD_Healthy/archive/output_merge.P1_P2.tsv"
+gene_couånt_3: "../20240325_ExfoSeq_SPARC_IBD_Healthy/archive/output_merge.P3.tsv"
+gene_stats_1_2: "../20240325_ExfoSeq_SPARC_IBD_Healthy/archive/output_merge.P1_P2.stat"
+gene_stats_3: "../20240325_ExfoSeq_SPARC_IBD_Healthy/archive/output_merge.P3.stat"
+
+otu_tax: "../20240325_ExfoSeq_SPARC_IBD_Healthy/archive/archive_20231126_16SV4_SPARC_IBD_DIVERS_H1_H7_H72/rdp.taxonomy.tsv"
+otu_table: "../20240325_ExfoSeq_SPARC_IBD_Healthy/archive/archive_20231126_16SV4_SPARC_IBD_DIVERS_H1_H7_H72/otu_table_97.txt"
+tax_table: "../20240325_ExfoSeq_SPARC_IBD_Healthy/archive/archive_20231126_16SV4_SPARC_IBD_DIVERS_H1_H7_H72/rdp.taxonomy.tsv"
+
+# walk_lengths: [4, 10, 50, 100]
+# n_walks: 100
+# p: [0.1, 10, 1]
+# q: [0.1, 10, 1]
+# dimensions: [128]
+# n_components: 2
+# alpha: 0.6
+# size: 20
+
+# walk_lengths: [4, 100]
+# n_walks: 100
+# p: [0.1]
+# q: [10]
+# dimensions: [20, 128]
+
+walk_lengths: [4, 10, 50]
+n_walks: 100
+p: [0.1, 1.0, 10]
+q: [0.1, 1.0, 10]
+dimensions: [10, 20, 60]
+
+n_components: 2
+alpha: 0.6
+size: 20
+
+min_sample: [2, 3]
+epsilon: [0.1, 0.05, 0.03]
+
+distance_threshold: 4
+
+embeddingsDir: "workflow/out/embeddings"
+matricesDir: "workflow/out/matrices"
+plotsDir: "workflow/out/plots"
+clusterPlots: "workflow/out/DBSCAN_plots/"
+clusteringMetrics: "workflow/out/clustering_metrics"
+distMatrix: "workflow/out/distance_matrix"
+distDF: "workflow/out/distance_longForm"

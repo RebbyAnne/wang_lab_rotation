@@ -1,0 +1,106 @@
+---
+title: "normalize_host_gene_count"
+output: html_document
+date: "2025-01-21"
+---
+
+```{r}
+library(readr)
+library(tidyverse)
+library(edgeR)
+library(ggplot2)
+library(energy)
+
+
+# HOST
+sample_metadata_host <- read.table("./sample.metadata.tsv", header = T, sep = "\t", stringsAsFactors = F)
+gene_metadata <- read.table("./gene.metadata.tsv", header = T, sep = "\t", stringsAsFactors = F)
+housekeeping_genes <- readLines("./geneSymbol.house_keep.list")
+
+data.count.P1_2 <- read.table("./archive/output_merge.P1_P2.tsv", header = T, sep = "\t", stringsAsFactors = F)
+data.count.P3 <- read.table("./archive/output_merge.P3.tsv", header = T, sep = "\t", stringsAsFactors = F)
+
+data.stat.P1_2 <- read.table("./archive/output_merge.P1_P2.stat", header = T, sep = "\t", stringsAsFactors = F)
+data.stat.P3 <- read.table("./archive/output_merge.P3.stat", header = T, sep = "\t", stringsAsFactors = F)
+
+# MICROBE
+sample_metadata_microbe <- read.table("./archive/archive_20231126_16SV4_SPARC_IBD_DIVERS_H1_H7_H72/sample.metadata.tsv", header = T, sep = "\t", stringsAsFactors = F)
+otu_taxonomy <- read.table("./archive/archive_20231126_16SV4_SPARC_IBD_DIVERS_H1_H7_H72/rdp.taxonomy.tsv", stringsAsFactors = F, header = F, sep = "\t", comment = "", quote = "")
+otu_table <- read.table("./archive/archive_20231126_16SV4_SPARC_IBD_DIVERS_H1_H7_H72/otu_table_97.txt", stringsAsFactors = F, header = T, sep = "\t", comment = "")
+
+```
+
+# CPM normalization for host and microbe
+```{r}
+# HOST
+# Combine gene counts and read statistics
+gene_counts <- rbind(data.count.P1_2, data.count.P3)
+read_stats <- rbind(data.stat.P1_2, data.stat.P3)
+
+hk_gene_counts <- gene_counts %>%
+  left_join(gene_metadata, by = "gene") %>% 
+  filter(geneSymbol %in% housekeeping_genes) %>%
+  group_by(sample) %>%
+  summarize(sum_umi_hkgenes = sum(num_of_umi))
+
+# Join gene metadata and read stats with raw counts
+host_cpm_data <- gene_counts %>%
+  left_join(gene_metadata, by = "gene") %>%
+  left_join(read_stats, by = "sample") %>%
+  left_join(hk_gene_counts, by = "sample") %>%
+  group_by(sample) %>%
+  mutate(rna_cpm = (num_of_umi / unique_UMI) * 1e6, 
+         cpm_hk_norm = (num_of_umi / sum_umi_hkgenes) * 1e6) %>%
+  ungroup() %>%
+  left_join(sample_metadata_host[,c("label", "patient", "disease_type")], by = c("sample" = "label")) %>%
+  group_by(geneSymbol, patient) %>%
+  summarize(mean_rna_cpm = mean(rna_cpm, na.rm = T),
+            mean_hk_norm_cpm = mean(cpm_hk_norm, na.rm = T)) %>%
+  ungroup() %>%
+  select(-mean_rna_cpm) %>%
+  pivot_wider(names_from = geneSymbol, values_from = mean_hk_norm_cpm) %>%
+  distinct()
+
+# pivot_wider(names_from = geneSymbol, values_from = mean_rna_cpm)
+
+# MICROBE
+otu_table <- rename(otu_table, otu = "X.OTU.ID")
+
+microbe_total_counts <- otu_table %>%
+  select(-1) %>% # Exclude the OTU column
+  summarise(across(everything(), sum)) %>% # Get column sums
+  pivot_longer(
+    cols = everything(),
+    names_to = "label",
+    values_to = "total_16S_reads"
+  )
+  
+microbe_cpm_data <- otu_table %>%
+  select(1, starts_with("rRNA")) %>%
+  pivot_longer(
+    cols = starts_with("rRNA16Seq"), 
+    names_to = "label", 
+    values_to = "num_of_reads"
+  ) %>%
+  left_join(sample_metadata_microbe, by = "label") %>%
+  left_join(microbe_total_counts, by = "label") %>%
+  mutate(otu_cpm = (num_of_reads / total_16S_reads) * 1e6, 
+         patient = as.character(patient_ID)) %>%
+  left_join(sample_metadata_host[, c("patient", "disease_type")], by = "patient") %>%
+  group_by(otu, patient) %>%
+  summarize(mean_otu_cpm = mean(otu_cpm, na.rm = T), .groups = "drop") %>%
+  pivot_wider(names_from = otu, values_from = mean_otu_cpm)
+
+host_microbe_merged <- inner_join(microbe_cpm_data, host_cpm_data, by = "patient")
+
+```
+
+# Pearson's correlation
+```{r}
+host_microbe_merged <- host_microbe_merged %>%
+  select(-patient)
+
+cor_matrix <- cor(host_microbe_merged, method = "pearson", use = "pairwise.complete.obs")
+```
+
+

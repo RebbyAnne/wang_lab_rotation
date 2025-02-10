@@ -1,0 +1,29 @@
+"0","library(readr)"
+"2","Warning messages:
+"
+"2","1: package ‘edgeR’ was built under R version 4.2.1 
+"
+"2","2: package ‘limma’ was built under R version 4.2.1 
+"
+"2","3: package ‘Biostrings’ was built under R version 4.2.1 
+"
+"2","4: package ‘IRanges’ was built under R version 4.2.1 
+"
+"2","5: package ‘GenomeInfoDb’ was built under R version 4.2.1 
+"
+"0","library(KEGGREST)"
+"2","Warning: package ‘KEGGREST’ was built under R version 4.2.1"
+"0","directory = ""./20240325_ExfoSeq_SPARC_IBD_Healthy"""
+"0",""
+"0","gene_metadata <- read.table(paste(directory, ""/gene.metadata.tsv"", sep = """"), header = T, sep = ""\t"", stringsAsFactors = F)"
+"0",""
+"0","otu_taxonomy <- read_delim(""20240325_ExfoSeq_SPARC_IBD_Healthy/archive/archive_20231126_16SV4_SPARC_IBD_DIVERS_H1_H7_H72/rdp.taxonomy.tsv"", "
+"0","    delim = ""\t"", escape_double = FALSE, "
+"0","    trim_ws = TRUE)"
+"2","[1mRows: [22m[34m1201[39m [1mColumns: [22m[34m8[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m ""\t""
+[31mchr[39m (8): otu, genus, root, kingdom, phylum, class, order, family"
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."

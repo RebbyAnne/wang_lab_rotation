@@ -1,0 +1,44 @@
+---
+title: "feature_correlation_viz"
+output: html_document
+date: "2025-01-28"
+---
+
+```{r}
+library(tidyverse)
+library(readr)
+library(ggplot2)
+
+microbe_features_matrix <- read_csv("feature_network_analysis/microbe_features_matrix.csv")
+gene_features_matrix <- read_csv("feature_network_analysis/gene_features_matrix.csv")
+kegg_pathway_metadata <- read_csv("20240325_ExfoSeq_SPARC_IBD_Healthy/kegg_pathway_metadata.csv", col_types = cols(...1 = col_skip()))
+feature_corr_matrix <- read_csv("feature_corr_matrix.csv")
+normalized_corr_matrix <- read_csv("microbe_gene_count_normalized_matrix.csv")
+```
+
+# feature counts
+```{r}
+microbe_feature_counts <- as.data.frame(colSums(microbe_features_matrix[, -1]))
+
+gene_feature_counts <- as.data.frame(colSums(gene_features_matrix[, -1]))
+
+# Count the number of unique genes for each kegg_pathway_name
+pathway_summary <- kegg_pathway_metadata %>%
+  group_by(kegg_pathway_name) %>%
+  summarise(
+    num_genes = n_distinct(gene_symbol)
+  )
+
+# Count the number of unique genes for each kegg_orthology_name
+orthology_summary <- kegg_pathway_metadata %>%
+  group_by(kegg_orthology_name) %>%
+  summarise(
+    num_genes = n_distinct(gene_symbol)
+  )
+
+```
+
+```{r}
+
+```
+

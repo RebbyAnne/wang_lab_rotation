@@ -1,0 +1,184 @@
+Cluster ID,Number of Nodes,Gene Nodes,Microbe Nodes,Gene Node List,Microbe Node List,Silhouette Score,Cluster Diameter,min_samples,epsilon,dimensions,walk_length,n_walks,p,q
+0,4,2,2,"['Cytokine-cytokine receptor interaction', 'Intestinal immune network for IgA production']","['Rubneribacter', 'Dellaglioa']",0.3642488,0.051086262,2,0.03,60,50,100,10,1.0
+1,34,15,19,"['Viral protein interaction with cytokine and cytokine receptor', 'glyceraldehyde 3-phosphate dehydrogenase (phosphorylating) [EC:1.2.1.12]', 'C-C motif chemokine 15/23', 'beta-2-microglobulin', 'Drug metabolism - other enzymes', 'ABC transporters', 'Nucleotide metabolism', 'tumor necrosis factor receptor superfamily member 10D', 'interleukin 17B', 'Glycosaminoglycan degradation', 'Ascorbate and aldarate metabolism', 'Carbon metabolism', 'dual oxidase [EC:1.6.3.1 1.11.1.-]', 'Biosynthesis of amino acids', 'bestrophin-2']","['Eggerthellaceae', 'Eggerthellales', 'Acidaminococcaceae', 'Acidaminococcales', 'Ichthyobacteriaceae', 'Sporosarcina', 'Slackia', 'Stomatobaculum', 'Massiliprevotella', 'Companilactobacillus', 'Howardella', 'Oligosphaerales', 'Fannyhessea', 'Finegoldia', 'Levilactobacillus', 'Facklamia', 'Actinotignum', 'Terrisporobacter', 'Lawsonella']",-0.4554746,0.28971192,2,0.03,60,50,100,10,1.0
+2,5,3,2,"['JAK-STAT signaling pathway', 'interleukin 17 receptor C', 'Peroxisome']","['Streptococcaceae', 'Megasphaera']",0.5521245,0.03991641,2,0.03,60,50,100,10,1.0
+3,3,3,0,"['Pathways in cancer', 'PI3K-Akt signaling pathway', 'Virion - Hepatitis viruses']",[],0.6736171,0.033255395,2,0.03,60,50,100,10,1.0
+4,10,7,3,"['Chemokine signaling pathway', 'Rheumatoid arthritis', 'IL-17 signaling pathway', 'NF-kappa B signaling pathway', 'transferrin receptor', 'C-X-C motif chemokine 11', 'Virion - Lassa virus and SFTS virus']","['Raoultibacter', 'Oligosphaeria', 'Rummeliibacillus']",0.3288257,0.10171246,2,0.03,60,50,100,10,1.0
+5,2,2,0,"['RAC serine/threonine-protein kinase [EC:2.7.11.1]', 'Longevity regulating pathway']",[],0.90389144,0.014724707,2,0.03,60,50,100,10,1.0
+6,2,2,0,"['Lipid and atherosclerosis', 'interleukin 18']",[],0.85404027,0.0065720947,2,0.03,60,50,100,10,1.0
+7,19,9,10,"['Hematopoietic cell lineage', 'integrin alpha M', 'Neuroactive ligand-receptor interaction', 'kinase insert domain protein receptor [EC:2.7.10.1]', 'lymphocyte cell-specific protein tyrosine kinase [EC:2.7.10.2]', 'erythropoietin receptor', 'defensin, alpha', 'caspase recruitment domain-containing protein 9', 'ankyrin-3']","['Mediterraneibacter', 'Atopobiaceae', 'Bryobacteraceae', 'Acidobacteriota', 'Bryobacter', 'Terriglobia', 'Lachnoanaerobaculum', 'Eubacterium', 'Varibaculum', 'Curtanaerobium']",-0.05846961,0.16199371,2,0.03,60,50,100,10,1.0
+8,8,4,4,"['Inflammatory bowel disease', 'Autoimmune thyroid disease', 'tumor necrosis factor receptor superfamily member 19', 'lipocalin 2']","['Actinomycetota', 'Streptococcus', 'Gordonibacter', 'Pectinatus']",0.38687187,0.064438544,2,0.03,60,50,100,10,1.0
+9,5,3,2,"['TNF signaling pathway', 'interferon gamma', 'interleukin 6 receptor']","['Staphylococcaceae', 'Lancefieldella']",0.5945953,0.04146615,2,0.03,60,50,100,10,1.0
+10,2,2,0,"['Herpes simplex virus 1 infection', 'Fluid shear stress and atherosclerosis']",[],0.39841896,0.022546468,2,0.03,60,50,100,10,1.0
+11,4,3,1,"['Toll-like receptor signaling pathway', 'Legionellosis', 'tumor necrosis factor receptor superfamily member 5']",['Corynebacteriaceae'],0.7548151,0.029046902,2,0.03,60,50,100,10,1.0
+12,2,2,0,"['Human cytomegalovirus infection', 'TGF-beta receptor type-1 [EC:2.7.11.30]']",[],0.57286793,0.027038943,2,0.03,60,50,100,10,1.0
+13,2,2,0,"['Kaposi sarcoma-associated herpesvirus infection', 'Salmonella infection']",[],0.5717331,0.018671684,2,0.03,60,50,100,10,1.0
+14,4,3,1,"['C-X-C motif chemokine 1/2/3', 'interleukin 17F', 'C-C motif chemokine 24']",['Methanomassiliicoccales'],0.5517818,0.04758578,2,0.03,60,50,100,10,1.0
+15,2,2,0,"['transcription factor AP-1', 'Phospholipase D signaling pathway']",[],0.7541286,0.011001586,2,0.03,60,50,100,10,1.0
+16,2,2,0,"['Toxoplasmosis', 'Cytoskeleton in muscle cells']",[],0.7856565,0.016117288,2,0.03,60,50,100,10,1.0
+17,2,2,0,"['interleukin 1 beta', 'CD86 antigen']",[],0.57438105,0.023878913,2,0.03,60,50,100,10,1.0
+18,4,4,0,"['Shigellosis', 'inhibitor of nuclear factor kappa-B kinase subunit gamma', 'transforming growth factor beta-2', 'interleukin 3']",[],0.66453373,0.056345224,2,0.03,60,50,100,10,1.0
+19,3,3,0,"['serine/threonine-protein kinase mTOR [EC:2.7.11.1]', 'Endocrine resistance', 'Glioma']",[],0.83009696,0.017677499,2,0.03,60,50,100,10,1.0
+20,3,3,0,"['epidermal growth factor receptor [EC:2.7.10.1]', 'Relaxin signaling pathway', 'Insulin resistance']",[],0.6524723,0.025082452,2,0.03,60,50,100,10,1.0
+21,5,4,1,"['Osteoclast differentiation', 'tumor necrosis factor receptor superfamily member 1A', 'interferon alpha', 'interferon receptor 1']",['Micrococcaceae'],0.30111057,0.059631076,2,0.03,60,50,100,10,1.0
+22,3,2,1,"['cyclin-dependent kinase inhibitor 1A', 'epithelial cell adhesion molecule']",['Priestia'],0.301005,0.055124972,2,0.03,60,50,100,10,1.0
+23,7,5,2,"['Necroptosis', 'Alcoholic liver disease', 'Epithelial cell signaling in Helicobacter pylori infection', 'integrin alpha L', 'ECM-receptor interaction']","['Cyanobacteriota', 'Oculatellaceae']",0.52250516,0.08877055,2,0.03,60,50,100,10,1.0
+24,3,2,1,"['Coronavirus disease - COVID-19', 'Ubiquitin mediated proteolysis']",['Scardovia'],0.80581826,0.02229805,2,0.03,60,50,100,10,1.0
+25,2,1,1,['Measles'],['Rothia'],0.6091144,0.016276939,2,0.03,60,50,100,10,1.0
+26,4,3,1,"['Leishmaniasis', 'proto-oncogene tyrosine-protein kinase Kit [EC:2.7.10.1]', 'toll-like receptor 3']",['Micrococcales'],0.51280093,0.053797625,2,0.03,60,50,100,10,1.0
+27,2,2,0,"['Epstein-Barr virus infection', 'Transcriptional misregulation in cancer']",[],0.3614443,0.026477706,2,0.03,60,50,100,10,1.0
+28,2,2,0,"['apoptosis regulator BAX', 'Colorectal cancer']",[],0.6312144,0.02356582,2,0.03,60,50,100,10,1.0
+29,6,5,1,"['TGF-beta signaling pathway', 'C-C chemokine receptor type 5', 'C-C chemokine receptor type 8', 'NLR family member X1', 'inhibin beta E chain']",['Oculatellales'],0.36483917,0.06507236,2,0.03,60,50,100,10,1.0
+30,2,2,0,"['interleukin 8', 'NACHT, LRR and PYD domains-containing protein 3']",[],0.47683856,0.028543217,2,0.03,60,50,100,10,1.0
+31,10,7,3,"['Pertussis', 'Amoebiasis', 'C-X-C motif chemokine 10', 'lymphotoxin alpha (TNF superfamily, member 1)', 'interleukin 10 receptor beta', 'Viral life cycle - HIV-1', 'Thy-1 cell surface antigen']","['Actinobacteria', 'Limosilactobacillus', 'Actinomyces']",0.29138565,0.115048066,2,0.03,60,50,100,10,1.0
+32,2,2,0,"['Hormone signaling', 'transforming growth factor beta-1']",[],0.6880224,0.016395997,2,0.03,60,50,100,10,1.0
+33,10,4,6,"['signal transducer and activator of transcription 1', 'myeloid differentiation primary response protein MyD88', 'interleukin 12B', 'C-C motif chemokine 2']","['Coriobacteriales', 'Coriobacteriaceae', 'Collinsella', 'Verrucomicrobiota', 'Tractidigestivibacter', 'Abiotrophia']",0.20379174,0.08703717,2,0.03,60,50,100,10,1.0
+34,2,2,0,"['baculoviral IAP repeat-containing protein 2/3', 'Efferocytosis']",[],0.7831063,0.008434388,2,0.03,60,50,100,10,1.0
+35,2,2,0,"['Human immunodeficiency virus 1 infection', 'Fc gamma R-mediated phagocytosis']",[],0.69242644,0.013814889,2,0.03,60,50,100,10,1.0
+36,3,3,0,"['Malaria', 'granulocyte-macrophage colony-stimulating factor', 'Proteasome']",[],0.5962625,0.021235129,2,0.03,60,50,100,10,1.0
+37,2,2,0,"['Hippo signaling pathway', 'bone morphogenetic protein receptor type-1B [EC:2.7.11.30]']",[],0.58005226,0.019067943,2,0.03,60,50,100,10,1.0
+38,2,2,0,"['Rap1 signaling pathway', 'Axon guidance']",[],0.6912786,0.028781397,2,0.03,60,50,100,10,1.0
+39,3,2,1,"['Yersinia infection', 'PD-L1 expression and PD-1 checkpoint pathway in cancer']",['Schaalia'],0.71071047,0.036525346,2,0.03,60,50,100,10,1.0
+40,4,4,0,"['Neutrophil extracellular trap formation', 'Janus kinase 2 [EC:2.7.10.2]', 'cAMP signaling pathway', 'Mineral absorption']",[],0.3746575,0.048145726,2,0.03,60,50,100,10,1.0
+41,4,4,0,"['Signaling pathways regulating pluripotency of stem cells', 'TGF-beta receptor type-2 [EC:2.7.11.30]', 'breast cancer anti-estrogen resistance 1', 'KIT ligand']",[],0.8148985,0.022529297,2,0.03,60,50,100,10,1.0
+42,4,4,0,"['Hepatocellular carcinoma', 'Regulation of actin cytoskeleton', 'Central carbon metabolism in cancer', 'Sphingolipid signaling pathway']",[],0.6923254,0.050763678,2,0.03,60,50,100,10,1.0
+43,2,1,1,['C-type lectin receptor signaling pathway'],['Streptophyta'],0.33088386,0.0268798,2,0.03,60,50,100,10,1.0
+44,2,2,0,"['insulin-like growth factor 1', 'Parathyroid hormone synthesis, secretion and action']",[],0.7701433,0.01889732,2,0.03,60,50,100,10,1.0
+45,2,2,0,"['Alzheimer disease', 'Amyotrophic lateral sclerosis']",[],0.6322197,0.028967101,2,0.03,60,50,100,10,1.0
+46,3,3,0,"['Natural killer cell mediated cytotoxicity', 'laminin, beta 1', 'Parkinson disease']",[],0.81387377,0.036807083,2,0.03,60,50,100,10,1.0
+47,2,2,0,"['interferon beta', 'MFS transporter, MCT family, solute carrier family 16 (monocarboxylic acid transporters), member 1']",[],0.9783156,0.0031705631,2,0.03,60,50,100,10,1.0
+48,3,2,1,"['Cell adhesion molecules', 'discs large protein 5']",['Oligosphaera'],0.74233764,0.029564178,2,0.03,60,50,100,10,1.0
+49,5,3,2,"['interleukin 1 alpha', 'interleukin 15 receptor alpha', 'C-X-C chemokine receptor type 3']","['Verrucomicrobiia', 'Xiamenia']",0.5989405,0.037531048,2,0.03,60,50,100,10,1.0
+50,3,3,0,"['proto-oncogene tyrosine-protein kinase Met [EC:2.7.10.1]', 'heme oxygenase 1 [EC:1.14.14.18]', 'erythropoietin']",[],0.3790764,0.038665075,2,0.03,60,50,100,10,1.0
+51,7,7,0,"['nitric-oxide synthase, inducible [EC:1.14.13.39]', 'interleukin 13', 'receptor-interacting serine/threonine-protein kinase 3 [EC:2.7.11.1]', 'Nitrogen metabolism', 'galactoside 3(4)-fucosyltransferase 3 [EC:2.4.1.65]', 'Glycosphingolipid biosynthesis - ganglio series', 'Arginine and proline metabolism']",[],0.54523385,0.06745756,2,0.03,60,50,100,10,1.0
+52,2,2,0,"['interferon gamma receptor 1', 'leucine-rich repeat-containing G protein-coupled receptor 5']",[],0.61099017,0.020180933,2,0.03,60,50,100,10,1.0
+53,5,4,1,"['T cell receptor signaling pathway', 'C-X-C motif chemokine 12', 'Cell cycle', 'Gastric acid secretion']",['Bifidobacteriaceae'],0.5077547,0.05433424,2,0.03,60,50,100,10,1.0
+54,3,3,0,"['Phagosome', 'hypoxanthine phosphoribosyltransferase [EC:2.4.2.8]', 'C-C motif chemokine 14']",[],0.65343016,0.041485526,2,0.03,60,50,100,10,1.0
+55,4,4,0,"['Acute myeloid leukemia', 'Bladder cancer', 'Tight junction', 'Thermogenesis']",[],0.7990854,0.027373705,2,0.03,60,50,100,10,1.0
+56,20,6,14,"['intercellular adhesion molecule 1', 'CD44 antigen', 'C-C chemokine receptor type 1', 'interleukin 17 receptor A', 'Lysosome', 'interferon regulatory factor 5']","['Clostridiaceae 1', 'Sporomusaceae', 'Anaeromassilibacillus', 'Faecalicoccus', 'Anaerococcus', 'Chitinophagaceae', 'Cellulosilyticum', 'Anaerobacterium', 'Methanomassiliicoccaceae', 'Acetitomaculum', 'Gracilibacteraceae', 'Salinithrix', 'Roseimarinus', 'Desulfocucumis']",0.3608905,0.09657595,2,0.03,60,50,100,10,1.0
+57,7,7,0,"['cyclin-dependent kinase inhibitor 2A', 'Leukocyte transendothelial migration', 'Cytosolic DNA-sensing pathway', 'African trypanosomiasis', 'T-cell surface glycoprotein CD4', 'Porphyrin metabolism', 'solute carrier family 25 (mitochondrial carnitine/acylcarnitine transporter), member 20/29']",[],0.58036375,0.058897752,2,0.03,60,50,100,10,1.0
+58,2,2,0,"['interleukin 10', 'Calcium signaling pathway']",[],0.6441613,0.0264622,2,0.03,60,50,100,10,1.0
+59,5,5,0,"['Chemical carcinogenesis - reactive oxygen species', 'Autophagy - animal', 'Apoptosis - multiple species', 'Mitophagy - animal', 'Cocaine addiction']",[],0.81527156,0.03846003,2,0.03,60,50,100,10,1.0
+60,2,2,0,"['Breast cancer', 'GnRH signaling pathway']",[],0.7508664,0.024089657,2,0.03,60,50,100,10,1.0
+61,3,3,0,"['integrin beta 2', 'adiponectin', 'interleukin 27 subunit alpha']",[],0.69483155,0.032092944,2,0.03,60,50,100,10,1.0
+62,6,5,1,"['interferon receptor 2', 'C-X-C chemokine receptor type 4', 'C-C chemokine receptor type 9', 'solute carrier family 4 (sodium bicarbonate cotransporter), member 4', 'carbonic anhydrase [EC:4.2.1.1]']",['Peptidiphaga'],0.37158647,0.07115404,2,0.03,60,50,100,10,1.0
+63,66,23,43,"['C-C motif chemokine 5', 'C-C motif chemokine 3', 'C-X-C chemokine receptor type 2', 'C-X-C chemokine receptor type 1', 'receptor-interacting serine/threonine-protein kinase 2 [EC:2.7.11.1]', 'C-C chemokine receptor type 4', 'tumor necrosis factor receptor superfamily member 13C', 'interferon regulatory factor 1', 'granulocyte colony-stimulating factor receptor', 'cytokine receptor common subunit beta', 'C-C motif chemokine 25', 'C-C motif chemokine 19', 'interleukin 21', 'interleukin 13 receptor alpha-1', 'inhibin beta A chain', 'interleukin 11 receptor alpha', 'pyrin', 'interleukin 9 receptor', 'toll-like receptor 1', 'interleukin 17 receptor B', 'tumor necrosis factor ligand superfamily member 7', 'tumor necrosis factor receptor superfamily member 6B', 'Biosynthesis of unsaturated fatty acids']","['Christensenellaceae', 'Guopingia', 'Alistipes', 'Rikenellaceae', 'Sporobacter', 'Clostridium sensu stricto', 'Oscillibacter', 'Muricoprocola', 'Ruminococcoides', 'Butyricimonas', 'Catenibacillus', 'Acutalibacter', 'Neglecta', 'Ligaoa', 'Thermotalea', 'Mordavella', 'Brotolimicola', 'Caproiciproducens', 'Chitinophagia', 'Paramuribaculum', 'Anaerophaga', 'Lacrimispora', 'Ferruginibacter', 'Anaerovibrio', 'Marinilabiliaceae', 'Moryella', 'Dielma', 'Bacillales_Incertae Sedis XI', 'Methanobacteriaceae', 'Methanobrevibacter', 'Holdemania', 'Thermoplasmata', 'Symbiobacteriaceae', 'Pelospora', 'Peptostreptococcus', 'Prolixibacteraceae', 'Falcatimonas', 'Romboutsia', 'Methanobacteriales', 'Anaerosomatales', 'Gemella', 'Alterileibacterium', 'Solobacterium']",-0.22251004,0.29515058,2,0.03,60,50,100,10,1.0
+64,2,2,0,"['Platinum drug resistance', 'Amphetamine addiction']",[],0.645614,0.024971366,2,0.03,60,50,100,10,1.0
+65,5,1,4,['monocyte differentiation antigen CD14'],"['Lactobacillales', 'Bacillaceae', 'Lactobacillus', 'Leuconostoc']",0.59322816,0.045022156,2,0.03,60,50,100,10,1.0
+66,3,3,0,"['Staphylococcus aureus infection', 'Antigen processing and presentation', 'Salivary secretion']",[],0.9084177,0.016785922,2,0.03,60,50,100,10,1.0
+67,3,3,0,"['interleukin 4', 'growth differentiation factor 5', 'C-C motif chemokine 26']",[],0.55762655,0.037524767,2,0.03,60,50,100,10,1.0
+68,5,2,3,"['C-X-C motif chemokine 5/6', 'growth hormone receptor']","['Muribaculum', 'Lysinibacillus', 'Lawsonellaceae']",0.34244418,0.05098715,2,0.03,60,50,100,10,1.0
+69,2,2,0,"['tumor necrosis factor ligand superfamily member 5', 'C-C motif chemokine 11']",[],0.89646214,0.019237183,2,0.03,60,50,100,10,1.0
+70,2,2,0,"['Growth hormone synthesis, secretion and action', 'Protein processing in endoplasmic reticulum']",[],0.84391594,0.015067637,2,0.03,60,50,100,10,1.0
+71,46,4,42,"['CD80 antigen', 'interleukin 18 receptor accessory protein', 'interleukin 20', 'leucine-rich repeat kinase 2 [EC:2.7.11.1]']","['Clostridia', 'Eubacteriales', 'Oscillospiraceae', 'Lachnospiraceae', 'Eubacteriales_incertae_sedis_XIII', 'Peptoniphilaceae', 'Muriventricola', 'Solibaculum', 'Intestinimonas', 'Fumia', 'Massiliimalia', 'Gehongia', 'Faecalibacterium', 'Lawsonibacter', 'Vescimonas', 'Colidextribacter', 'Peptococcus', 'Tepidibaculum', 'Paludihabitans', 'Prevotella', 'Aminipila', 'Acetanaerobacterium', 'Bacillota_incertae_sedis', 'Zhaonellaceae', 'Agathobacter', 'Merdimmobilis', 'Baileyella', 'Dysgonomonadaceae', 'Caproicibacterium', 'Diplocloster', 'Poaceae', 'Natranaerobiaceae', 'Anaerovorax', 'Dethiobacter', 'Dubosiella', 'Suilimivivens', 'Absicoccus', 'Murimonas', 'Pseudobacteroides', 'Zhenhengia', 'Miniphocaeibacter', 'Anaeroglobus']",-0.37799466,0.31284234,2,0.03,60,50,100,10,1.0
+72,3,2,1,"['macrophage colony-stimulating factor 1', 'autophagy-related protein 16-1']",['Barnesiellaceae'],0.52700895,0.040679023,2,0.03,60,50,100,10,1.0
+73,46,9,37,"['neutrophil cytosolic factor 2', 'interleukin 18 receptor 1', ""purine-nucleoside/S-methyl-5'-thioadenosine phosphorylase / adenosine deaminase [EC:2.4.2.1 2.4.2.28 3.5.4.4]"", 'interleukin 21 receptor', 'C-C motif chemokine 28', 'integrin alpha X', 'MFS transporter, OCT family, solute carrier family 22 (organic cation transporter), member 4/5', 'ectodysplasin-A', 'C-X-C chemokine receptor type 7 (atypical chemokine receptor 3)']","['Bacteroidia', 'Erysipelotrichales', 'Erysipelotrichia', 'Erysipelotrichaceae', 'Prevotellaceae', 'Blautia', 'Peptostreptococcaceae', 'Phocaeicola', 'Ihubacter', 'Eubacteriaceae', 'Coprobacillaceae', 'Lachnospira', 'Segatella', 'Thomasclavelia', 'Criibacterium', 'Duncaniella', 'Dysosmobacter', 'Longicatena', 'Faecalicatena', 'Odoribacter', 'Zongyangia', 'Holdemanella', 'Agathobaculum', 'Ruthenibacterium', 'Faecalibacillus', 'Aerococcaceae', 'Capillibacterium', 'Paenibacillaceae', 'Metaprevotella', 'Williamwhitmaniaceae', 'Faecalibaculum', 'Acidaminococcus', 'Allisonella', 'Acetobacteroides', 'Senegalimassilia', 'Peribacillus', 'Caldinitratiruptor']",-0.35023656,0.2699248,2,0.03,60,50,100,10,1.0
+74,3,3,0,"['Prolactin signaling pathway', 'FMS-like tyrosine kinase 4 [EC:2.7.10.1]', 'VEGF signaling pathway']",[],0.77220196,0.034119118,2,0.03,60,50,100,10,1.0
+75,7,3,4,"['Graft-versus-host disease', 'Pancreatic secretion', 'semenogelase [EC:3.4.21.77]']","['Enorma', 'Olsenella', 'Ornithinibacillus', 'Oceanobacillus']",0.3522838,0.06746246,2,0.03,60,50,100,10,1.0
+76,4,4,0,"['Adherens junction', 'Thyroid hormone signaling pathway', 'Oxytocin signaling pathway', 'Thyroid cancer']",[],0.8113539,0.07378825,2,0.03,60,50,100,10,1.0
+77,3,3,0,"['FMS-like tyrosine kinase 1 [EC:2.7.10.1]', 'myeloperoxidase [EC:1.11.2.2]', 'Biosynthesis of cofactors']",[],0.5381474,0.024043726,2,0.03,60,50,100,10,1.0
+78,5,3,2,"['Wnt signaling pathway', 'Autophagy - other', 'tumor necrosis factor receptor superfamily member 11A']","['Glutamicibacter', 'Nocardiaceae']",0.3683938,0.056692213,2,0.03,60,50,100,10,1.0
+79,2,1,1,['neutrophil cytosolic factor 4'],['Bacteroidales'],0.8500633,0.011113779,2,0.03,60,50,100,10,1.0
+80,5,2,3,"['beta-glucuronidase [EC:3.2.1.31]', 'Pentose and glucuronate interconversions']","['Muribaculaceae', 'Mogibacterium', 'Weizmannia']",0.67414767,0.042781394,2,0.03,60,50,100,10,1.0
+81,3,2,1,"['interleukin 1 receptor type II', 'secreted frizzled-related protein 3']",['Youxingia'],0.69599456,0.034872875,2,0.03,60,50,100,10,1.0
+82,2,1,1,['interleukin 6 signal transducer'],['Bifidobacterium'],0.3135233,0.026907504,2,0.03,60,50,100,10,1.0
+83,3,2,1,"['tumor necrosis factor, alpha-induced protein 3 [EC:3.4.19.12]', 'small subunit ribosomal protein S18e']",['Selenomonadales'],0.5941193,0.0327677,2,0.03,60,50,100,10,1.0
+84,2,2,0,"['fms-related tyrosine kinase 3 [EC:2.7.10.1]', 'Proximal tubule bicarbonate reclamation']",[],0.86236954,0.013704109,2,0.03,60,50,100,10,1.0
+85,2,2,0,"['Dilated cardiomyopathy', 'Hypertrophic cardiomyopathy']",[],0.8102908,0.020258054,2,0.03,60,50,100,10,1.0
+86,4,3,1,"['tumor necrosis factor receptor superfamily member 1B', 'thrombopoietin receptor', 'hepatocyte growth factor-like protein']",['Sporofaciens'],0.5265338,0.06450171,2,0.03,60,50,100,10,1.0
+87,2,2,0,"['C-C motif chemokine 4', 'C-C motif chemokine 20']",[],0.85836077,0.011034681,2,0.03,60,50,100,10,1.0
+88,2,2,0,"['B cell receptor signaling pathway', 'GnRH secretion']",[],0.8150409,0.015557866,2,0.03,60,50,100,10,1.0
+89,4,2,2,"['granulocyte colony-stimulating factor', 'Virion - Adenovirus']","['Thermoclostridium', 'Thermanaerosceptrum']",0.696883,0.04309894,2,0.03,60,50,100,10,1.0
+90,3,2,1,"['plasminogen activator inhibitor 1', 'mucin-2']",['Paraclostridium'],0.7832585,0.036774077,2,0.03,60,50,100,10,1.0
+91,2,2,0,"['CASP8 and FADD-like apoptosis regulator', 'toll-like receptor 5']",[],0.63967913,0.015835814,2,0.03,60,50,100,10,1.0
+92,5,2,3,"['interleukin 17A', 'NACHT, LRR and PYD domains-containing protein 12']","['Huintestinicola', 'Breznakia', 'Fenollaria']",0.5826435,0.033039585,2,0.03,60,50,100,10,1.0
+93,2,2,0,"['interleukin 3 receptor alpha', 'Cysteine and methionine metabolism']",[],0.5685525,0.023910552,2,0.03,60,50,100,10,1.0
+94,17,4,13,"['interleukin 10 receptor alpha', 'B-lymphocyte antigen CD19', 'inducible T-cell co-stimulator ligand', 'interleukin 26']","['Bacteroidota', 'Anaerotruncus', 'Laedolimicola', 'Odoribacteraceae', 'Roseburia', 'Porphyromonas', 'Paenibacillus', 'Listeriaceae', 'Methanomassiliicoccus', 'Filifactor', 'Albibacterium', 'Thermoactinomycetaceae', 'Atopobium']",0.13191177,0.1410296,2,0.03,60,50,100,10,1.0
+95,5,3,2,"['ubiquitin carboxyl-terminal hydrolase CYLD [EC:3.4.19.12]', 'interferon kappa', 'Phenylalanine metabolism']","['Adlercreutzia', 'Tissierellaceae']",0.26316398,0.061078165,2,0.03,60,50,100,10,1.0
+96,3,1,2,['toll-like receptor 6'],"['Prevotellamassilia', 'Ellagibacter']",0.6890474,0.024163188,2,0.03,60,50,100,10,1.0
+97,2,2,0,"['bone morphogenetic protein receptor type-1A [EC:2.7.11.30]', 'Purine metabolism']",[],0.9219269,0.007314986,2,0.03,60,50,100,10,1.0
+98,2,1,1,['claudin'],['Longibaculum'],0.63284385,0.01756615,2,0.03,60,50,100,10,1.0
+99,4,2,2,"['C-C chemokine receptor type 3', 'ciliary neurotrophic factor']","['Thermophilibacter', 'Actinobaculum']",0.5027579,0.057861395,2,0.03,60,50,100,10,1.0
+100,15,3,12,"['acyl-CoA 6-desaturase (Delta-6 desaturase) [EC:1.14.19.3]', 'C-X-C motif chemokine 13', 'inhibin beta B chain']","['Hydrogeniiclostridium', 'Butyricicoccus', 'Anthropogastromicrobium', 'Lachnotalea', 'Vallitaleaceae', 'Petrocella', 'Chitinophagales', 'Negativibacillus', 'Cryptanaerobacter', 'Petroclostridium', 'Proteinivorax', 'Methanobacteria']",0.27816117,0.116066694,2,0.03,60,50,100,10,1.0
+101,2,2,0,"['Insulin signaling pathway', 'Serotonergic synapse']",[],0.83102703,0.021670096,2,0.03,60,50,100,10,1.0
+102,2,1,1,['fms-related tyrosine kinase 3 ligand'],['Porphyromonadaceae'],0.86428535,0.005670096,2,0.03,60,50,100,10,1.0
+103,2,2,0,"['anti-mullerian hormone', 'tumor necrosis factor receptor superfamily member 25']",[],0.6922114,0.028230438,2,0.03,60,50,100,10,1.0
+104,2,1,1,['nucleotide-binding oligomerization domain-containing protein 1'],['Tepidimicrobium'],0.7137848,0.01817813,2,0.03,60,50,100,10,1.0
+105,8,7,1,"['Bile secretion', 'tumor necrosis factor receptor superfamily member 14', 'interleukin 22 receptor alpha 1', 'aquaporin-8', 'Virion - Herpesvirus', 'nuclear receptor subfamily 1 group D member 2', 'tumor necrosis factor receptor superfamily member 21']",['Desertifilales'],0.37721306,0.07614046,2,0.03,60,50,100,10,1.0
+106,2,2,0,"['bone morphogenetic protein 2', 'activin receptor type-1B [EC:2.7.11.30]']",[],0.4379378,0.027223904,2,0.03,60,50,100,10,1.0
+107,2,1,1,['ghrelin'],['Turicibacter'],0.88673484,0.008148719,2,0.03,60,50,100,10,1.0
+108,12,1,11,['interleukin 1 receptor accessory protein'],"['Papillibacter', 'Anaerofilum', 'Robinsoniella', 'Copranaerobaculum', 'Plantae', 'Pseudoflavonifractor', 'Acetatifactor', 'Liliopsida', 'Clostridiaceae 3', 'Butyribacter', 'Drancourtella']",0.35500285,0.0829992,2,0.03,60,50,100,10,1.0
+109,3,1,2,['leukemia inhibitory factor'],"['Faecalitalea', 'Velocimicrobium']",0.66387653,0.028006122,2,0.03,60,50,100,10,1.0
+110,8,1,7,['mitogen-activated protein kinase kinase kinase 8 [EC:2.7.11.25]'],"['Veillonellaceae', 'Veillonellales', 'Phascolarctobacterium', 'Lutispora', 'Sphingobacteriales', 'Oenococcus', 'Anaerosoma']",0.12873746,0.10241124,2,0.03,60,50,100,10,1.0
+111,6,3,3,"['thrombopoietin', 'CX3C chemokine receptor 1', 'C-C chemokine receptor type 10']","['Caryophanales', 'Bryobacterales', 'Arabiibacter']",0.13108414,0.09277952,2,0.03,60,50,100,10,1.0
+112,2,2,0,"['interleukin 7', 'Fatty acid biosynthesis']",[],0.88610077,0.014314493,2,0.03,60,50,100,10,1.0
+113,4,3,1,"['activin receptor type-2B [EC:2.7.11.30]', 'Protein digestion and absorption', 'sphingosine 1-phosphate receptor 5']",['Ichthyobacterium'],0.53070027,0.036186695,2,0.03,60,50,100,10,1.0
+114,2,2,0,"['potassium intermediate/small conductance calcium-activated channel subfamily N member 4', 'interferon omega']",[],0.7676143,0.015417398,2,0.03,60,50,100,10,1.0
+115,3,2,1,"['aminopeptidase N [EC:3.4.11.2]', 'Glutathione metabolism']",['Paratractidigestivibacter'],0.83589107,0.045671515,2,0.03,60,50,100,10,1.0
+116,2,1,1,"['ATP-binding cassette, subfamily B (MDR/TAP), member 1 [EC:7.6.2.2]']",['Coprobacter'],0.8759696,0.011586654,2,0.03,60,50,100,10,1.0
+117,2,2,0,"['Glycosphingolipid biosynthesis - lacto and neolacto series', 'C-C chemokine receptor type 7']",[],0.81914854,0.017833423,2,0.03,60,50,100,10,1.0
+118,2,2,0,"['activin receptor type-2A [EC:2.7.11.30]', 'E3 ubiquitin-protein ligase RNF31 [EC:2.3.2.31]']",[],0.6890039,0.016559493,2,0.03,60,50,100,10,1.0
+119,5,3,2,"['cytotoxic T-lymphocyte-associated protein 4', 'Glycosphingolipid biosynthesis - globo and isoglobo series', 'C-X-C chemokine receptor type 6']","['Massilimicrobiota', 'Hoministercoradaptatus']",0.49526447,0.08054145,2,0.03,60,50,100,10,1.0
+120,2,1,1,['C-C chemokine receptor type 2'],['Dendrosporobacter'],0.6189059,0.026458325,2,0.03,60,50,100,10,1.0
+121,3,3,0,"['cGMP-PKG signaling pathway', 'Ovarian steroidogenesis', 'Circadian entrainment']",[],0.86889774,0.018690404,2,0.03,60,50,100,10,1.0
+122,2,2,0,"['Oocyte meiosis', 'Long-term depression']",[],0.7531693,0.025456022,2,0.03,60,50,100,10,1.0
+123,2,2,0,"['Adrenergic signaling in cardiomyocytes', 'Retrograde endocannabinoid signaling']",[],0.7700153,0.024275877,2,0.03,60,50,100,10,1.0
+124,3,2,1,"['galactoside 2-L-fucosyltransferase 1/2 [EC:2.4.1.69]', 'C-C chemokine receptor type 6']",['Fournierella'],0.705669,0.029977746,2,0.03,60,50,100,10,1.0
+125,2,1,1,['C-C motif chemokine 1'],['Negativicoccus'],0.71043026,0.017576857,2,0.03,60,50,100,10,1.0
+126,6,1,5,['inhibin beta C chain'],"['Kineothrix', 'Poales', 'Hydrogenoanaerobacterium', 'Coprobacillus', 'Mediterranea']",0.534982,0.06385168,2,0.03,60,50,100,10,1.0
+127,3,3,0,"['C1GALT1-specific chaperone 1', 'C-X-C motif chemokine 16', 'Other types of O-glycan biosynthesis']",[],0.6293368,0.03368844,2,0.03,60,50,100,10,1.0
+128,2,1,1,['tumor necrosis factor receptor superfamily member 13B'],['Enterococcaceae'],0.71211344,0.026593143,2,0.03,60,50,100,10,1.0
+129,4,3,1,"['interleukin 11', 'interleukin 17 receptor E', 'Arginine biosynthesis']",['Amedibacterium'],0.33209038,0.04745561,2,0.03,60,50,100,10,1.0
+130,4,2,2,"['Virion - Human immunodeficiency virus', 'Collecting duct acid secretion']","['Corynebacterium', 'Staphylococcus']",0.59779465,0.07188517,2,0.03,60,50,100,10,1.0
+131,2,1,1,['interleukin 17D'],['Pediococcus'],0.7413536,0.017158033,2,0.03,60,50,100,10,1.0
+132,2,2,0,"['anti-mullerian hormone receptor type-2 [EC:2.7.11.30]', 'C-X-C motif chemokine 14']",[],0.7095772,0.023812918,2,0.03,60,50,100,10,1.0
+133,4,2,2,"['phenylpyruvate tautomerase [EC:5.3.2.1]', 'Tyrosine metabolism']","['Selenomonadaceae', 'Syntrophococcus']",0.51935637,0.037119932,2,0.03,60,50,100,10,1.0
+134,2,1,1,['interleukin 20 receptor beta'],['Gleimia'],0.61094,0.022340553,2,0.03,60,50,100,10,1.0
+135,2,1,1,['C-C motif chemokine 18'],['Lentisphaerota'],0.68562573,0.02415068,2,0.03,60,50,100,10,1.0
+136,2,2,0,"['Fatty acid metabolism', 'ciliary neurotrophic factor receptor']",[],0.5656245,0.0184776,2,0.03,60,50,100,10,1.0
+137,2,2,0,"['T-cell surface glycoprotein CD2', 'alpha-Linolenic acid metabolism']",[],0.6314876,0.027486742,2,0.03,60,50,100,10,1.0
+138,6,2,4,"['tumor necrosis factor receptor superfamily member 17', 'interleukin 37']","['Peptococcaceae', 'Caproicibacter', 'Hominimerdicola', 'Pararoseburia']",0.38713494,0.07013166,2,0.03,60,50,100,10,1.0
+139,3,1,2,['cardiotrophin 1'],"['Sellimonas', 'Garciella']",0.21017165,0.051074225,2,0.03,60,50,100,10,1.0
+140,2,2,0,"['motilin', 'Spliceosome']",[],0.8262907,0.022846945,2,0.03,60,50,100,10,1.0
+141,3,1,2,['tumor necrosis factor receptor superfamily member EDAR'],"['Flintibacter', 'Proteinivoraceae']",0.8175561,0.018132124,2,0.03,60,50,100,10,1.0
+142,2,1,1,['thymic stromal-derived lymphopoietin receptor'],['Waltera'],0.939736,0.005248605,2,0.03,60,50,100,10,1.0
+143,5,1,4,['tumor necrosis factor receptor superfamily member 27'],"['Dorea', 'Anaerostipes', 'Ethanoligenens', 'Intestinibacillus']",0.5269024,0.069276996,2,0.03,60,50,100,10,1.0
+144,2,1,1,['forkhead box P3'],['Verrucomicrobiales'],0.73513794,0.011123005,2,0.03,60,50,100,10,1.0
+145,3,1,2,"['NACHT, LRR and PYD domains-containing protein 1']","['Fusicatenibacter', 'Syntrophomonas']",0.7060389,0.021487426,2,0.03,60,50,100,10,1.0
+146,2,1,1,['interleukin 22 receptor alpha 2'],['Campylobacter'],0.89685863,0.01815204,2,0.03,60,50,100,10,1.0
+147,2,1,1,"['solute carrier family 15 (oligopeptide transporter), member 1']",['Oligosphaeraceae'],0.65997726,0.026351305,2,0.03,60,50,100,10,1.0
+148,4,1,3,['neurotensin'],"['Akkermansiaceae', 'Akkermansia', 'Barnesiella']",0.4484374,0.03135241,2,0.03,60,50,100,10,1.0
+149,4,1,3,"['solute carrier family 26 (sulfate anion transporter), member 2']","['Lactobacillaceae', 'Actinomycetaceae', 'Kocuria']",0.39671874,0.05890657,2,0.03,60,50,100,10,1.0
+150,2,1,1,['guanylate cyclase activator 2'],['Desertifilaceae'],0.62304604,0.026571503,2,0.03,60,50,100,10,1.0
+151,2,1,1,['Thyroid hormone synthesis'],['Berryella'],0.54396623,0.021925563,2,0.03,60,50,100,10,1.0
+152,2,1,1,['deleted in malignant brain tumors 1 protein'],['Lactiplantibacillus'],0.9086449,0.015077542,2,0.03,60,50,100,10,1.0
+153,4,1,3,['Glycolysis / Gluconeogenesis'],"['Caryophanaceae', 'Flavobacteriales', 'Stecheria']",0.69834495,0.047810223,2,0.03,60,50,100,10,1.0
+154,2,1,1,['free fatty acid receptor 2'],['Propionispira'],0.74701846,0.009991393,2,0.03,60,50,100,10,1.0
+155,2,1,1,['neuropeptide W'],['Hallella'],0.76945484,0.012732745,2,0.03,60,50,100,10,1.0
+156,2,1,1,['tumor necrosis factor receptor superfamily member 4'],['Paradesulfitobacterium'],0.7288612,0.016306618,2,0.03,60,50,100,10,1.0
+157,2,0,2,[],"['Coriobacteriia', 'Bacteroides']",0.74193776,0.012576703,2,0.03,60,50,100,10,1.0
+158,3,0,3,[],"['Negativicutes', 'Luoshenia', 'Christensenella']",0.5908518,0.025314227,2,0.03,60,50,100,10,1.0
+159,2,0,2,[],"['Betaproteobacteria', 'Turicimonas']",0.97690666,0.023973757,2,0.03,60,50,100,10,1.0
+160,2,0,2,[],"['Fusobacteriales', 'Fusobacteriota']",0.89423454,0.019602086,2,0.03,60,50,100,10,1.0
+161,3,0,3,[],"['Eubacteriales_incertae_sedis', 'Harryflintia', 'Pusillibacter']",0.5461464,0.05372077,2,0.03,60,50,100,10,1.0
+162,6,0,6,[],"['Ruminococcus', 'Zhaonella', 'Thermoanaerobacterales', 'Hespellia', 'Heliobacterium', 'Anaerotalea']",0.80805296,0.028174756,2,0.03,60,50,100,10,1.0
+163,2,0,2,[],"['Enterocloster', 'Alloprevotella']",0.9033115,0.010017623,2,0.03,60,50,100,10,1.0
+164,2,0,2,[],"['Coprococcus', 'Heliobacteriaceae']",0.83840084,0.012095969,2,0.03,60,50,100,10,1.0
+165,2,0,2,[],"['Synergistia', 'Mariniplasma']",0.69979346,0.02033612,2,0.03,60,50,100,10,1.0
+166,2,0,2,[],"['Synergistota', 'Victivallis']",0.55944777,0.029698018,2,0.03,60,50,100,10,1.0
+167,2,0,2,[],"['Clostridiaceae 2', 'Murdochiella']",0.59182346,0.020641778,2,0.03,60,50,100,10,1.0
+168,2,0,2,[],"['Isachenkonia', 'Caldisalinibacter']",0.36609107,0.029098662,2,0.03,60,50,100,10,1.0
+169,2,0,2,[],"['Anaerobutyricum', 'Catenibacterium']",0.52741545,0.022994436,2,0.03,60,50,100,10,1.0
+170,2,0,2,[],"['Eubacteriales_incertae_sedis_XII', 'Guggenheimella']",0.79024565,0.013170057,2,0.03,60,50,100,10,1.0
+171,2,0,2,[],"['Anaerosolibacter', 'Frisingicoccus']",0.71370685,0.026204314,2,0.03,60,50,100,10,1.0
+172,3,0,3,[],"['Ercella', 'Desulfitibacter', 'Natranaerobiales']",0.6250985,0.027665786,2,0.03,60,50,100,10,1.0
+173,3,0,3,[],"['Defluviitaleaceae', 'Lactonifactor', 'Pseudoprevotella']",0.8954297,0.012114815,2,0.03,60,50,100,10,1.0
+174,2,0,2,[],"['Veillonella', 'Tissierellia']",0.7015219,0.016736858,2,0.03,60,50,100,10,1.0
+175,4,0,4,[],"['Acholeplasmatales', 'Asteroleplasma', 'Anaeroplasmataceae', 'Anaeroplasmatales']",0.55107856,0.043823473,2,0.03,60,50,100,10,1.0
+176,3,0,3,[],"['Brotonthovivens', 'Sphingobacteriaceae', 'Parvimonas']",0.9453604,0.0037298875,2,0.03,60,50,100,10,1.0
+177,2,0,2,[],"['Novisyntrophococcus', 'Desulfurispora']",0.92308617,0.008447631,2,0.03,60,50,100,10,1.0
+178,4,0,4,[],"['Hyphomicrobium', 'Paracoccaceae', 'Rhodobacterales', 'Methylobacteriaceae']",0.5869193,0.037773624,2,0.03,60,50,100,10,1.0
+179,2,0,2,[],"['Hyphomicrobiaceae', 'Gemmobacter']",0.8776121,0.008706149,2,0.03,60,50,100,10,1.0
+180,2,0,2,[],"['Lentisphaeria', 'Aminivibrio']",0.5902597,0.022644294,2,0.03,60,50,100,10,1.0
+181,4,0,4,[],"['Euryarchaeota', 'Methylomusa', 'Koleobacter', 'Koleobacterales']",0.5141031,0.03280789,2,0.03,60,50,100,10,1.0
+182,2,0,2,[],"['Carnobacteriaceae', 'Psychrobacillus']",0.92267895,0.008221207,2,0.03,60,50,100,10,1.0

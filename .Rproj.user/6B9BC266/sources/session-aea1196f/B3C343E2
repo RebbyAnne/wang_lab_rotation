@@ -1,0 +1,27 @@
+{
+    "id": "B3C343E2",
+    "path": "~/Desktop/wang_rotation/20240325_ExfoSeq_SPARC_IBD_Healthy/normalize_host_gene_count.Rmd",
+    "project_path": "20240325_ExfoSeq_SPARC_IBD_Healthy/normalize_host_gene_count.Rmd",
+    "type": "r_markdown",
+    "hash": "303186388",
+    "contents": "",
+    "dirty": false,
+    "created": 1738601139061.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "28,0",
+        "scrollLine": "17"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1738021565,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1738021565,
+    "read_only": false,
+    "read_only_alternatives": []
+}
